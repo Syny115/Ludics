@@ -32,7 +32,7 @@ public class MenuManager : MonoBehaviour
     [Header("HUD In-Game")]
     public GameObject pointsSlider;
     public GameObject popUpButton;
-    public GameObject headlines;
+    //public GameObject headlines;
 
     private string categoriaActual;
 
@@ -50,7 +50,7 @@ public class MenuManager : MonoBehaviour
 
         pointsSlider.SetActive(false);
         popUpButton.SetActive(false);
-        headlines.SetActive(false);
+        //headlines.SetActive(false);
 
         scienceChallengeMinigames.SetActive(false);
         sciencePracticeMinigames.SetActive(false);
@@ -226,7 +226,7 @@ public class MenuManager : MonoBehaviour
 
         pointsSlider.SetActive(true);
         popUpButton.SetActive(true);
-        headlines.SetActive(true);
+        //headlines.SetActive(true);
 
         //Activar canvas
         canvasAMostrar.SetActive(true);

@@ -30,6 +30,8 @@ public class MG_Preguntas : MonoBehaviour
     [SerializeField] private float intensidadShake = 15f;
     [SerializeField] private float duracionShake = 0.5f;
 
+    public Maneta maneta;
+    public SoundManager soundManager;
     public SliderController sliderController;
     public PanelScrollManager panelScrollManager;
     public int numPreguntas;
@@ -95,12 +97,18 @@ public class MG_Preguntas : MonoBehaviour
 
         if (esCorrecto)
         {
+            StartCoroutine(maneta.ActivarCorrectTemporal());
             Debug.Log("¡Respuesta correcta!");
+            soundManager.PlayCorrectAnswer();
+
             StartCoroutine(EsperarYCambiarPregunta());
         }
         else
         {
+            StartCoroutine(maneta.ActivarWrongTemporal());
             Debug.Log("Respuesta incorrecta");
+            soundManager.PlayWrongAnswer();
+
             // Aplicar animación de shake al botón incorrecto
             Button botonIncorrecto = esBoton1 ? boton1 : boton2;
             StartCoroutine(ShakeBoton(botonIncorrecto.transform));
