@@ -2192,10 +2192,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 86b73e81da2ace64e8addcfeaa26a032, type: 3}
-  m_Resource: {fileID: 8300000, guid: 86b73e81da2ace64e8addcfeaa26a032, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7e96b2c8be8636b46aaa7189fca1606d, type: 3}
+  m_Resource: {fileID: 8300000, guid: 7e96b2c8be8636b46aaa7189fca1606d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5273,6 +5273,18 @@ MonoBehaviour:
   - textoPregunta: QUIN OBJECTE ES UN PLATAN?
     imagenBoton1: {fileID: 21300000, guid: 28886cdf7a2087d45838c88d06e88a53, type: 3}
     imagenBoton2: {fileID: 21300000, guid: a8d30fd419903174ba6235936327f752, type: 3}
+    boton1EsCorrecto: 1
+  - textoPregunta: "QUIN PESA M\xC9S?"
+    imagenBoton1: {fileID: 21300000, guid: 655a842e622a04149901a5f332711d64, type: 3}
+    imagenBoton2: {fileID: 21300000, guid: 45b5314164497f04a92f71970d0d4908, type: 3}
+    boton1EsCorrecto: 1
+  - textoPregunta: "QUIN PESA M\xC9S?"
+    imagenBoton1: {fileID: 21300000, guid: 5f01c74ceba1958418cd9a9a3f751caf, type: 3}
+    imagenBoton2: {fileID: 21300000, guid: 28886cdf7a2087d45838c88d06e88a53, type: 3}
+    boton1EsCorrecto: 1
+  - textoPregunta: "QUIN PESA M\xC9S?"
+    imagenBoton1: {fileID: 21300000, guid: bd6409be6c828e84a8d7cc7490fd031a, type: 3}
+    imagenBoton2: {fileID: 21300000, guid: 2b0121c97e1b75a4897ccf7fb1b11a97, type: 3}
     boton1EsCorrecto: 1
   tiempoEsperaAntesCambio: 1
   intensidadShake: 15
