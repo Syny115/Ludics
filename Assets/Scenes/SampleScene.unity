@@ -1087,7 +1087,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 317, y: -63}
-  m_SizeDelta: {x: 300, y: 300}
+  m_SizeDelta: {x: 170, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &301626139
 MonoBehaviour:
@@ -1155,7 +1155,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 2c857d2a6eeccd6458d9f3e1c6841b3d, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1590,6 +1590,151 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416480225}
   m_CullTransparentMesh: 1
+--- !u!1 &440478824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 440478827}
+  - component: {fileID: 440478826}
+  - component: {fileID: 440478825}
+  m_Layer: 0
+  m_Name: MusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &440478825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440478824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00d7ecc1d334ad4480dd82e2e4bb35f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 440478826}
+  menuMusic: {fileID: 8300000, guid: 7e96b2c8be8636b46aaa7189fca1606d, type: 3}
+  gameModeMusic: {fileID: 8300000, guid: 86b73e81da2ace64e8addcfeaa26a032, type: 3}
+--- !u!82 &440478826
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440478824}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &440478827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440478824}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 975.3871, y: 858.73413, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &444183970
 GameObject:
   m_ObjectHideFlags: 0
@@ -2189,7 +2334,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583960124}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7e96b2c8be8636b46aaa7189fca1606d, type: 3}
@@ -3343,7 +3488,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: QUE OBJECTE PESA MES?
+  m_text: "QUIN PESA M\xC9S?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a6ebc74f872f38245b8663a1441d879b, type: 2}
   m_sharedMaterial: {fileID: 5425911881462090904, guid: a6ebc74f872f38245b8663a1441d879b, type: 2}
@@ -3370,8 +3515,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 300
+  m_fontSizeBase: 300
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5262,15 +5407,15 @@ MonoBehaviour:
   imagenBoton1: {fileID: 1762926741}
   imagenBoton2: {fileID: 301626140}
   preguntas:
-  - textoPregunta: QUIN OBJECTE ES UNA POMA?
+  - textoPregunta: "QUIN \xC9S UNA POMA?"
     imagenBoton1: {fileID: 21300000, guid: 45b5314164497f04a92f71970d0d4908, type: 3}
     imagenBoton2: {fileID: 21300000, guid: 28886cdf7a2087d45838c88d06e88a53, type: 3}
     boton1EsCorrecto: 1
-  - textoPregunta: QUIN OBJECTE ES UNA PERA?
+  - textoPregunta: "QUIN \xC9S UNA PERA?"
     imagenBoton1: {fileID: 21300000, guid: 28886cdf7a2087d45838c88d06e88a53, type: 3}
     imagenBoton2: {fileID: 21300000, guid: 2b0121c97e1b75a4897ccf7fb1b11a97, type: 3}
     boton1EsCorrecto: 0
-  - textoPregunta: QUIN OBJECTE ES UN PLATAN?
+  - textoPregunta: "QUIN \xC9S UN PLATAN?"
     imagenBoton1: {fileID: 21300000, guid: 28886cdf7a2087d45838c88d06e88a53, type: 3}
     imagenBoton2: {fileID: 21300000, guid: a8d30fd419903174ba6235936327f752, type: 3}
     boton1EsCorrecto: 1
@@ -5293,7 +5438,7 @@ MonoBehaviour:
   soundManager: {fileID: 583960125}
   sliderController: {fileID: 2056046672}
   panelScrollManager: {fileID: 1212982514}
-  numPreguntas: 3
+  numPreguntas: 6
 --- !u!114 &1314063495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5464,7 +5609,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: QUE OBJECTE PESA MES?
+  m_text: "QUIN PESA M\xC9S?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a6ebc74f872f38245b8663a1441d879b, type: 2}
   m_sharedMaterial: {fileID: 5425911881462090904, guid: a6ebc74f872f38245b8663a1441d879b, type: 2}
@@ -5491,8 +5636,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 250
+  m_fontSizeBase: 250
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5790,7 +5935,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: QUE OBJECTE PESA MES?
+  m_text: "Quin pasar\xE0 pel buit?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a6ebc74f872f38245b8663a1441d879b, type: 2}
   m_sharedMaterial: {fileID: 5425911881462090904, guid: a6ebc74f872f38245b8663a1441d879b, type: 2}
@@ -5817,8 +5962,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 250
+  m_fontSizeBase: 250
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5954,6 +6099,18 @@ MonoBehaviour:
       - m_Target: {fileID: 374830682}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: GoToSciencePractice
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 440478825}
+        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
+        m_MethodName: PlayGameModeMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6271,17 +6428,29 @@ MonoBehaviour:
   imagenBoton1: {fileID: 676612729}
   imagenBoton2: {fileID: 2027238095}
   preguntas:
-  - textoPregunta: 3+3=?
-    imagenBoton1: {fileID: 21300000, guid: 93fb7bcf5ad503a44a065cb920929bf8, type: 3}
-    imagenBoton2: {fileID: 21300000, guid: 5f1692ef420e0fb4380413491719d64c, type: 3}
+  - textoPregunta: 3 + 3 = ?
+    imagenBoton1: {fileID: 686840674431283481, guid: 6c8de4c964b63a946adcd9bf2b4a0ba2, type: 3}
+    imagenBoton2: {fileID: 3242541044445310607, guid: 982bc0645ec656f47aa0dbf3385003aa, type: 3}
     boton1EsCorrecto: 1
-  - textoPregunta: 5-2=?
-    imagenBoton1: {fileID: 21300000, guid: 5f1692ef420e0fb4380413491719d64c, type: 3}
-    imagenBoton2: {fileID: 21300000, guid: 93fb7bcf5ad503a44a065cb920929bf8, type: 3}
+  - textoPregunta: 5 - 2 = ?
+    imagenBoton1: {fileID: 4818706994215378233, guid: 7dec0a3cd155fbd4f82098c7830c854b, type: 3}
+    imagenBoton2: {fileID: 8982858968264402164, guid: 60b6d9dc1ee2c9242b6d39f61421bb8b, type: 3}
     boton1EsCorrecto: 0
-  - textoPregunta: 10-9=?
-    imagenBoton1: {fileID: 21300000, guid: 93fb7bcf5ad503a44a065cb920929bf8, type: 3}
-    imagenBoton2: {fileID: 21300000, guid: 5f1692ef420e0fb4380413491719d64c, type: 3}
+  - textoPregunta: 10 - 9 = ?
+    imagenBoton1: {fileID: 1132109975148480548, guid: 20a61e4488ab39642b0ab90acde10d21, type: 3}
+    imagenBoton2: {fileID: -4019459212650556425, guid: a1aa383f71cd50d4185b0f1070e154e4, type: 3}
+    boton1EsCorrecto: 1
+  - textoPregunta: 2 - 1 = ?
+    imagenBoton1: {fileID: 1132109975148480548, guid: 20a61e4488ab39642b0ab90acde10d21, type: 3}
+    imagenBoton2: {fileID: 8982858968264402164, guid: 60b6d9dc1ee2c9242b6d39f61421bb8b, type: 3}
+    boton1EsCorrecto: 1
+  - textoPregunta: 9 - 2 = ?
+    imagenBoton1: {fileID: -5258526757019031594, guid: 921687968740ff7408323bb4865bd1e6, type: 3}
+    imagenBoton2: {fileID: -6425782416232930052, guid: 165418f601363414ca1aae9daa097033, type: 3}
+    boton1EsCorrecto: 1
+  - textoPregunta: 5 + 4 = ?
+    imagenBoton1: {fileID: 4818706994215378233, guid: 7dec0a3cd155fbd4f82098c7830c854b, type: 3}
+    imagenBoton2: {fileID: 1132109975148480548, guid: 20a61e4488ab39642b0ab90acde10d21, type: 3}
     boton1EsCorrecto: 1
   tiempoEsperaAntesCambio: 1
   intensidadShake: 15
@@ -6290,7 +6459,7 @@ MonoBehaviour:
   soundManager: {fileID: 583960125}
   sliderController: {fileID: 2056046672}
   panelScrollManager: {fileID: 1212982514}
-  numPreguntas: 3
+  numPreguntas: 6
 --- !u!114 &1669023795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6767,7 +6936,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -315, y: -63}
-  m_SizeDelta: {x: 300, y: 300}
+  m_SizeDelta: {x: 170, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1762926740
 MonoBehaviour:
@@ -6835,7 +7004,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 2c857d2a6eeccd6458d9f3e1c6841b3d, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -7976,3 +8145,4 @@ SceneRoots:
   - {fileID: 770203677}
   - {fileID: 43518178}
   - {fileID: 583960126}
+  - {fileID: 440478827}
