@@ -46,6 +46,8 @@ public class SliderController : MonoBehaviour
             targetSlider.minValue = customMinValue;
             targetSlider.maxValue = customMaxValue;
             DebugLog($"Límites del slider configurados: Min={customMinValue}, Max={customMaxValue}");
+
+            targetSlider.value = customMaxValue / 2;
         }
 
         DebugLog($"SliderController iniciado - Value actual: {targetSlider.value}");
