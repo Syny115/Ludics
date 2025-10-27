@@ -15,6 +15,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip wrongAnswer;
     [SerializeField] private AudioClip gameOver;
     [SerializeField] private AudioClip victory;
+    [SerializeField] private AudioClip ultimateVictory;
+    [SerializeField] private AudioClip ultimateGameOver;
 
     [Header("Settings")]
     [Range(0f, 1f)]
@@ -79,6 +81,16 @@ public class SoundManager : MonoBehaviour
         PlaySFX(victory);
     }
 
+    public void PlayUltimateVictory()
+    {
+        PlaySFX(ultimateVictory);
+    }
+
+    public void PlayUltimateGameOver()
+    {
+        PlaySFX(ultimateGameOver);
+    }
+
     // Función genérica para reproducir cualquier clip
     public void PlaySFX(AudioClip clip)
     {
@@ -104,6 +116,18 @@ public class SoundManager : MonoBehaviour
         {
             musicSource.clip = musicClip;
             musicSource.volume = musicVolume * masterVolume;
+            musicSource.Play();
+        }
+    }
+
+    public void ToggleMusic()
+    {
+        if (musicSource.isPlaying == true)
+        {
+            musicSource.Pause();
+        }
+        else if(musicSource.isPlaying == false)
+        {
             musicSource.Play();
         }
     }

@@ -20,12 +20,13 @@ public class SliderController : MonoBehaviour
     [SerializeField] private float autoDecrementAmount = 0.1f;
     [Tooltip("Cantidad que se resta automáticamente cada segundo")]
     [SerializeField] private GameObject pauseObject = null;
+    [SerializeField] private GameObject[] uiPanels;
     [Tooltip("Si este objeto está activo, el auto-decremento se pausa")]
 
     [Header("Optional: Clamp Values")]
     [SerializeField] private bool useCustomLimits = false;
-    [SerializeField] private float customMinValue = 0f;
-    [SerializeField] private float customMaxValue = 1f;
+    [SerializeField] public float customMinValue = 0f;
+    [SerializeField] public float customMaxValue = 1f;
 
     [Header("Debug")]
     [SerializeField] private bool showDebugInfo = false;
@@ -58,12 +59,8 @@ public class SliderController : MonoBehaviour
         if (!autoDecrement || targetSlider == null)
             return;
 
-        // Si el objeto de pausa está activo, no aplicar auto-decremento
-        if (pauseObject != null && pauseObject.activeInHierarchy)
-        {
-            DebugLog("Auto-decremento pausado: objeto de pausa activo");
+        if (!AnyPanelActive())
             return;
-        }
 
         autoDecrementTimer += Time.deltaTime;
 
@@ -73,7 +70,18 @@ public class SliderController : MonoBehaviour
             ApplyAutoDecrement();
         }
     }
+    private bool AnyPanelActive()
+    {
+        if (uiPanels == null || uiPanels.Length == 0)
+            return false;
 
+        foreach (var panel in uiPanels)
+        {
+            if (panel != null && panel.activeInHierarchy)
+                return true;
+        }
+        return false;
+    }
     /// <summary>
     /// Aplica el decremento automático al slider
     /// </summary>

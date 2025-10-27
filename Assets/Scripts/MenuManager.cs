@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Collections;
 
 public class MenuManager : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class MenuManager : MonoBehaviour
     public GameObject selectMenu;
     public GameObject achievementsMenu;
     public GameObject popUp;
+    public GameObject victory;
+    public GameObject defeat;
 
     [Header("Desplegables")]
     public GameObject scienceButton;
@@ -32,7 +36,10 @@ public class MenuManager : MonoBehaviour
     [Header("HUD In-Game")]
     public GameObject pointsSlider;
     public GameObject popUpButton;
+
+    [Header("Codigo Spaghetti")]
     public SliderController SliderController;
+    public SoundManager SoundManager;
     //public GameObject headlines;
 
     private string categoriaActual;
@@ -44,26 +51,34 @@ public class MenuManager : MonoBehaviour
         MostrarPanel(mainMenu);
     }
 
+    private void Update()
+    {
+        if (SliderController.GetSliderValue() == SliderController.customMaxValue)
+        {
+            victory.SetActive(true);
+            pointsSlider.SetActive(false);
+            popUpButton.SetActive(false);
+            SoundManager.PlayUltimateVictory();
+
+            SliderController.SetSliderValue(25);
+
+        }
+
+        if (SliderController.GetSliderValue() == SliderController.customMinValue)
+        {
+            defeat.SetActive(true);
+            pointsSlider.SetActive(false);
+            popUpButton.SetActive(false);
+            SoundManager.PlayUltimateGameOver();
+
+            SliderController.SetSliderValue(25);
+        }
+    }
+
     //Navegacion entre paneles
     public void OpenMainMenu()
     {
-        MostrarPanel(mainMenu);
-
-        pointsSlider.SetActive(false);
-        popUpButton.SetActive(false);
-        //headlines.SetActive(false);
-
-        scienceChallengeMinigames.SetActive(false);
-        sciencePracticeMinigames.SetActive(false);
-
-        languageChallengeMinigames.SetActive(false);
-        languagePracticeMinigames.SetActive(false);
-
-        artChallengeMinigames.SetActive(false);
-        artPracticeMinigames.SetActive(false);
-
-        popurriMinigames.SetActive(false);
-
+        StartCoroutine(OpenMainMenuWithDelay());
     }
 
     public void OpenSelectMenu()
@@ -174,7 +189,7 @@ public class MenuManager : MonoBehaviour
         PlayerPrefs.Save();
 
         Debug.Log("SFX: " + (sfxActivo ? "Activado" : "Desactivado"));
-        // Aquí aplicarías el cambio al AudioManager
+        SoundManager.ToggleMusic();
     }
 
     public void ToggleOST()
@@ -233,5 +248,27 @@ public class MenuManager : MonoBehaviour
         //Activar canvas
         canvasAMostrar.SetActive(true);
     }
-        
+    private IEnumerator OpenMainMenuWithDelay()
+    {
+        // Esperar 1 segundo
+        yield return new WaitForSeconds(1f);
+
+        MostrarPanel(mainMenu);
+
+        victory.SetActive(false);
+        defeat.SetActive(false);
+        pointsSlider.SetActive(false);
+        popUpButton.SetActive(false);
+
+        scienceChallengeMinigames.SetActive(false);
+        sciencePracticeMinigames.SetActive(false);
+
+        languageChallengeMinigames.SetActive(false);
+        languagePracticeMinigames.SetActive(false);
+
+        artChallengeMinigames.SetActive(false);
+        artPracticeMinigames.SetActive(false);
+
+        popurriMinigames.SetActive(false);
+    }
 }
