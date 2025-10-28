@@ -293,4 +293,17 @@ public class MG_Shapes : MonoBehaviour
             MostrarPreguntaActual();
         }
     }
+
+    public void ResetPoints(string modo)
+    {
+        if ( modo == "challenge")
+        {
+            sliderController.SetSliderValue(25);
+        }
+
+        else
+        {
+            sliderController.SetSliderValue(0);
+        }
+    }
 }

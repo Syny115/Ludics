@@ -149,59 +149,48 @@ public class MenuManager : MonoBehaviour
     //Entrar en Compendio de MiniJuegos
     public void GoToSciencePractice()
     {
-        ActivarCanvas(sciencePracticeMinigames);   
+        ActivarCanvas(sciencePracticeMinigames);
+        SoundManager.PauseMusicMainMenu();
+        SoundManager.PlayMusicInGame();
+
     }
     public void GoToLanguagePractice()
     {
         ActivarCanvas(languagePracticeMinigames);
+        SoundManager.PauseMusicMainMenu();
+        SoundManager.PlayMusicInGame();
     }
     public void GoToArtPractice()
     {
         ActivarCanvas(artPracticeMinigames);
+        SoundManager.PauseMusicMainMenu();
+        SoundManager.PlayMusicInGame();
     }
 
     public void GoToScienceChallenge()
     {
         ActivarCanvas(scienceChallengeMinigames);
+        SoundManager.PauseMusicMainMenu();
+        SoundManager.PlayMusicInGame();
     }
     public void GoToLanguageChallenge()
     {
         ActivarCanvas(languageChallengeMinigames);
+        SoundManager.PauseMusicMainMenu();
+        SoundManager.PlayMusicInGame();
     }
     public void GoToArtChallenge()
     {
         ActivarCanvas(artChallengeMinigames);
+        SoundManager.PauseMusicMainMenu();
+        SoundManager.PlayMusicInGame();
     }
 
     public void GoToPopurri()
     {
         ActivarCanvas(popurriMinigames);
-    }
-
-    //Audio (PENDIENTE)
-
-    public void ToggleSFX()
-    {
-        // Implementa la lógica para activar/desactivar SFX
-        bool sfxActivo = !PlayerPrefs.HasKey("SFX_Activo") || PlayerPrefs.GetInt("SFX_Activo") == 1;
-        sfxActivo = !sfxActivo;
-        PlayerPrefs.SetInt("SFX_Activo", sfxActivo ? 1 : 0);
-        PlayerPrefs.Save();
-
-        Debug.Log("SFX: " + (sfxActivo ? "Activado" : "Desactivado"));
-        SoundManager.ToggleMusic();
-    }
-
-    public void ToggleOST()
-    {
-        // Implementa la lógica para activar/desactivar OST
-        bool ostActivo = !PlayerPrefs.HasKey("OST_Activo") || PlayerPrefs.GetInt("OST_Activo") == 1;
-        ostActivo = !ostActivo;
-        PlayerPrefs.SetInt("OST_Activo", ostActivo ? 1 : 0);
-        PlayerPrefs.Save();
-
-        Debug.Log("OST: " + (ostActivo ? "Activado" : "Desactivado"));
-        // Aquí aplicarías el cambio al AudioManager
+        SoundManager.PauseMusicMainMenu();
+        SoundManager.PlayMusicInGame();
     }
 
     //Mostrar panel
@@ -251,9 +240,11 @@ public class MenuManager : MonoBehaviour
     private IEnumerator OpenMainMenuWithDelay()
     {
         // Esperar 1 segundo
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
 
         MostrarPanel(mainMenu);
+        SoundManager.PlayMusicMainMenu();
+        SoundManager.PauseMusicInGame();
 
         victory.SetActive(false);
         defeat.SetActive(false);

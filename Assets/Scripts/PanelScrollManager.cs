@@ -12,9 +12,6 @@ public class PanelScrollManager : MonoBehaviour
     [SerializeField] private float transitionDuration = 0.4f;
     [SerializeField] private AnimationCurve transitionCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
-    [Header("Navigation Buttons")]
-    [SerializeField] private Button nextButton;
-
     [Header("Debug")]
     [SerializeField] private bool showDebugInfo = true;
 
@@ -60,17 +57,6 @@ public class PanelScrollManager : MonoBehaviour
 
         // Configurar posiciones iniciales
         SetupPanels();
-
-        // Asignar evento al botón
-        if (nextButton != null)
-        {
-            nextButton.onClick.AddListener(GoToNextPanel);
-            DebugLog("Botón Next configurado correctamente");
-        }
-        else
-        {
-            Debug.LogWarning("No hay botón Next asignado");
-        }
 
         // Elegir el primer panel aleatorio y activarlo
         currentPanelIndex = Random.Range(0, panels.Length);
@@ -150,10 +136,6 @@ public class PanelScrollManager : MonoBehaviour
     {
         isTransitioning = true;
 
-        // Deshabilitar el botón durante la transición
-        if (nextButton != null)
-            nextButton.interactable = false;
-
         DebugLog($"Estado ANTES de la transición:");
         DebugLog($"  - Panel actual [{currentPanelIndex}]: Pos={panels[currentPanelIndex].anchoredPosition}, Activo={panels[currentPanelIndex].gameObject.activeSelf}");
         DebugLog($"  - Panel siguiente [{nextPanelIndex}]: Pos={panels[nextPanelIndex].anchoredPosition}, Activo={panels[nextPanelIndex].gameObject.activeSelf}");
@@ -202,10 +184,6 @@ public class PanelScrollManager : MonoBehaviour
         PrepareNextPanel();
 
         isTransitioning = false;
-
-        // Rehabilitar el botón
-        if (nextButton != null)
-            nextButton.interactable = true;
 
         DebugLog($"Estado DESPUÉS de la transición:");
         DebugLog($"  - Panel actual [{currentPanelIndex}]: Pos={panels[currentPanelIndex].anchoredPosition}, Activo={panels[currentPanelIndex].gameObject.activeSelf}");

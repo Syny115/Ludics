@@ -29,10 +29,6 @@ public class Maneta : MonoBehaviour
     {
         get
         {
-            if (instance == null)
-            {
-                instance = FindObjectOfType<Maneta>();
-            }
             return instance;
         }
     }

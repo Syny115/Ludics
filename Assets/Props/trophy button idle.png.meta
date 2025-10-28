@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      trophy button idle_0: 2966530321165604644
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -18,6 +18,10 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip ultimateVictory;
     [SerializeField] private AudioClip ultimateGameOver;
 
+    [Header("OSTs")]
+    [SerializeField] private AudioSource mainMenuMusic;
+    [SerializeField] private AudioSource inGameMusic;
+
     [Header("Settings")]
     [Range(0f, 1f)]
     [SerializeField] private float masterVolume = 1f;
@@ -89,6 +93,26 @@ public class SoundManager : MonoBehaviour
     public void PlayUltimateGameOver()
     {
         PlaySFX(ultimateGameOver);
+    }
+
+    public void PlayMusicMainMenu()
+    {
+        mainMenuMusic.UnPause();
+    }
+
+    public void PauseMusicMainMenu()
+    {
+        mainMenuMusic.Pause();
+    }
+
+    public void PlayMusicInGame()
+    {
+        inGameMusic.UnPause();
+    }
+
+    public void PauseMusicInGame()
+    {
+        inGameMusic.Pause();
     }
 
     // Función genérica para reproducir cualquier clip
